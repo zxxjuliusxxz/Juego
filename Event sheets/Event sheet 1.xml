@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="monedas" sid="247196849624480" static="0" type="number">0</variable>
+        <event-block sid="530763498495164">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="941962122509569">
+            <conditions>
+                <condition id="2" name="Key is down" sid="267466684832162" type="Keyboard">
+                    <param id="0" name="Key">37</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="815944787541518" type="Sprite2">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="774463483429724">
+            <conditions>
+                <condition id="2" name="Key is down" sid="274474104301263" type="Keyboard">
+                    <param id="0" name="Key">39</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="193698838536169" type="Sprite2">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="724984530262914">
+            <conditions>
+                <condition behavior="Platform" id="2" name="Is on floor" sid="529729435024745" type="Sprite2" />
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="729078671172330">
+            <conditions>
+                <condition id="7" inverted="1" name="Is mirrored" sid="268207477554014" type="Sprite5" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="310333147561900" type="Sprite5">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="824313477744190">
+            <conditions>
+                <condition id="7" name="Is mirrored" sid="223130697108346" type="Sprite5" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="353169151874387" type="Sprite5">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="817503506016810">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="124222278247086" type="Sprite5">
+                    <param id="0" name="Object">isquierda</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="333423596195562" type="Sprite5">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="404449741798084">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="199880011671079" type="Sprite5">
+                    <param id="0" name="Object">derecha</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="777571903393321" type="Sprite5">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="278746373610068">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="318610051095163" type="Sprite2">
+                    <param id="0" name="Object">Sprite5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="168442277144464" type="Sprite2">
+                    <param id="0" name="Instance variable">vidadejugador</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="407637314893897" type="Sprite2">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="436727875083031">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="481155872850750" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="912850513217990" type="Sprite19">
+                    <param id="0" name="Width">sprite2.vidadejugador</param>
+                </action>
+                <action id="-5" name="Set width" sid="617221799158497" type="Sprite20">
+                    <param id="0" name="Width">sprite2.barraMana</param>
+                </action>
+                <action id="0" name="Set text" sid="782215901562711" type="Text">
+                    <param id="0" name="Text">monedas</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="965023382452408">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="855596306251802" type="Sprite2">
+                    <param id="0" name="Instance variable">vidadejugador</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="781387060572393" type="Sprite19">
+                    <param id="0" name="Width">0</param>
+                </action>
+                <action behavior="Flash" id="1" name="Stop flashing" sid="707000117625725" type="Sprite2" />
+                <action id="4" name="Set animation" sid="468280838332732" type="Sprite2">
+                    <param id="0" name="Animation">&quot;morir&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="610942213016651" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" sid="941955272287981" type="Sprite2">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="391334329609534">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="202350811560357" type="Keyboard">
+                    <param id="0" name="Key">90</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="618474615739940" type="Sprite2">
+                    <param id="0" name="Instance variable">barraMana</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="623783458823361" type="System">
+                    <param id="0" name="Object to create">Sprite21</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">Sprite2.ImagePointX(1)</param>
+                    <param id="3" name="Y">Sprite2.ImagePointY(1)</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="717264624876425" type="Sprite2">
+                    <param id="0" name="Instance variable">barraMana</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="839459064526111">
+                    <conditions>
+                        <condition id="7" name="Is mirrored" sid="378558386557425" type="Sprite2" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="577939462449198" type="Sprite21">
+                            <param id="0" name="Speed">-400</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="659519777372528">
+                    <conditions>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="887408883107748" type="Sprite2" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="652535251952964" type="Sprite21">
+                            <param id="0" name="Speed">400</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="276097418168693">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="679170111740838" type="Sprite21">
+                    <param id="0" name="Object">Sprite5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="475687025965173" type="Sprite5">
+                    <param id="0" name="Instance variable">vidadelenemigo</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="554104722184182" type="Sprite21" />
+            </actions>
+        </event-block>
+        <event-block sid="506180422916047">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="742563531180582" type="Sprite5">
+                    <param id="0" name="Instance variable">vidadelenemigo</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="535520821986514" type="Sprite5" />
+            </actions>
+        </event-block>
+        <event-block sid="515527511276714">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="388157066405714" type="Sprite21">
+                    <param id="0" name="Object">Sprite</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="176148807131173" type="Sprite21" />
+            </actions>
+        </event-block>
+        <event-block sid="101866555698533">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="972750172418356" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="877062490478229" type="Sprite2">
+                    <param id="0" name="Instance variable">barraMana</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">234</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="298990041175704" type="Sprite2">
+                    <param id="0" name="Instance variable">barraMana</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="775870324706409">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="702256836724721" type="Sprite2">
+                    <param id="0" name="Object">Sprite23</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="378716360474549" type="System">
+                    <param id="0" name="Variable">monedas</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="870845029174688" type="Sprite23" />
+            </actions>
+        </event-block>
+        <event-block sid="453742395833246">
+            <conditions>
+                <condition id="0" name="Compare text" sid="831954098053647" type="Text">
+                    <param id="0" name="Text to compare">&quot;5&quot;</param>
+                    <param id="1" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="800766724123359" type="Sprite2">
+                    <param id="0" name="Instance variable">vidadejugador</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">234</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="322338234750160" type="Sprite2">
+                    <param id="0" name="Instance variable">vidadejugador</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="551826568328152" type="System">
+                    <param id="0" name="Variable">monedas</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="981720596270168">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="992752390425021" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="230583688478939" type="Audio">
+                    <param id="0" name="Audio file">Super Nintendo - Top Gear - Track 1</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
